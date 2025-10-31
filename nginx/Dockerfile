@@ -5,4 +5,7 @@ FROM nginx:latest
 #RUN apt upgrade -y
 #RUN apt install dnsutils net-tools cowsay -y
 
-#CMD ["/bin/bash","-c","/usr/games/cowsay Apreder ASA usando Docker é divertido!!! && sleep infinity"]
+COPY index.html /usr/share/nginx/html/index.html
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
